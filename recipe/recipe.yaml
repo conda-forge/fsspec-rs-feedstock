@@ -1,5 +1,5 @@
 context:
-  version: "0.1.1"
+  version: "0.1.2"
 
 package:
   name: fsspec-rs
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fsspec_rs/fsspec_rs-${{ version }}.tar.gz
-  sha256: 99d4aafe471f346325dc4dfa6a25307e075bbda6b8d0919a3ddad0bf6926090e
+  sha256: 3e21d3d9d52f9f59c485f22938845ecb0503eee51b92e1c2d3274b80adcda3c6
 
 build:
   number: 0
@@ -39,7 +39,7 @@ requirements:
     - hatch-rs
     - if: is_abi3
       then:
-      - python-abi3
+        - python-abi3
   run:
     - python
     - fsspec
