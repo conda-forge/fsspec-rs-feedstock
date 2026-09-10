@@ -10,7 +10,7 @@ source:
   sha256: 2d7d9876dd5f29dc782c85cdb8414a3ed913e7ccc4ef10e830a859c2d2415ef1
 
 build:
-  number: 0
+  number: 1
   python:
     version_independent: true
   script:
@@ -25,9 +25,11 @@ requirements:
   build:
     - if: build_platform != target_platform
       then:
-        - python
+        - python ${{ python_min }}.*
         - cross-python_${{ target_platform }}
         - crossenv
+        - hatchling
+        - hatch-rs
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('rust') }}
@@ -43,16 +45,16 @@ requirements:
   run:
     - python
     - fsspec
-  ignore_run_exports:
-    from_package:
-      - cross-python_${{ target_platform }}
 
 tests:
   - python:
       imports:
         - fsspec_rs
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
   - if: is_abi3
     then:
       script:
