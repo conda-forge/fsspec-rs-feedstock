@@ -29,7 +29,7 @@ requirements:
         - cross-python_${{ target_platform }}
         - crossenv
         - hatchling
-        - hatch-rs >=0.4.3
+        - hatch-rs >=0.5.0
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('rust') }}
@@ -38,7 +38,7 @@ requirements:
     - python
     - pip
     - hatchling
-    - hatch-rs >=0.4.3
+    - hatch-rs >=0.5.0
     - if: is_abi3
       then:
         - python-abi3
