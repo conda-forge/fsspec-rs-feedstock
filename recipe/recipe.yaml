@@ -1,5 +1,5 @@
 context:
-  version: "0.2.3"
+  version: "0.2.4"
 
 package:
   name: fsspec-rs
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fsspec_rs/fsspec_rs-${{ version }}.tar.gz
-  sha256: 851bdec8570e01e0c41ff2e427b20618b609f195c66f22ba5c498342c5e0741f
+  sha256: ed68b2ba615d61aeba24a59c2f48934e5e56a075b34ac0a9762c4608fca3f463
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
         - cross-python_${{ target_platform }}
         - crossenv
         - hatchling
-        - hatch-rs >=0.5.0
+        - hatch-rs >=0.6.1
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('rust') }}
@@ -38,7 +38,7 @@ requirements:
     - python
     - pip
     - hatchling
-    - hatch-rs >=0.5.0
+    - hatch-rs >=0.6.1
     - if: is_abi3
       then:
         - python-abi3
