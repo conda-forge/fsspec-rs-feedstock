@@ -1,5 +1,5 @@
 context:
-  version: "0.2.5"
+  version: "0.3.0"
 
 package:
   name: fsspec-rs
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fsspec_rs/fsspec_rs-${{ version }}.tar.gz
-  sha256: c5071c172b68c88ec8b21890a69fbb612e365dd47fb0b719f7e9af2f80a83fb1
+  sha256: 3715d45c8975ae704b2f8d035606a732534ed206221b554b089a0777d3cdf269
 
 build:
   number: 0
